@@ -1,22 +1,18 @@
-int buttonState = 0;
-
 void setup()
 {
-  pinMode(2, INPUT);
-  pinMode(13, OUTPUT);
+  
+  pinMode(2,INPUT);
+  pinMode(13,OUTPUT);
 }
 
 void loop()
 {
- 
-  buttonState = digitalRead(2);
-  
-  if (buttonState == HIGH) {
-
-    digitalWrite(13, HIGH);
-  } else {
-
-    digitalWrite(13, LOW);
+  if(digitalRead(2)== 1)
+  {
+     digitalWrite(13,HIGH);
   }
- 
-}
+  else
+  {
+     digitalWrite(13,LOW);
+  }
+ }
