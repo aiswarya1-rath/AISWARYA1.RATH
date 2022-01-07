@@ -1,0 +1,29 @@
+// C++ code
+//
+int preState=0;
+int ledState=0;
+
+void setup()
+{
+  pinMode(8,INPUT);
+  pinMode(13,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int bState=digitalRead(8);
+  if((bState==1)&&(preState==0)){
+    delay(5);
+    if (ledState==0){
+       ledState=1;
+    }else if(ledState==1){
+       ledState=0;
+    }
+  }
+  digitalWrite(13,ledState);
+  Serial.print(preState);
+  Serial.print("");
+  Serial.println(bState);
+  preState=bState;
+}
