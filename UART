@@ -1,0 +1,21 @@
+int ledPin=5;
+
+void setup()
+{
+  pinMode(ledPin,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int state_button =Serial.read();
+  
+  if(state_button==HIGH)
+  
+    digitalWrite(ledPin,HIGH);
+ else
+   
+   digitalWrite(ledPin,LOW);
+    
+ 
+}
